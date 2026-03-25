@@ -1,71 +1,219 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaetyDraw | Marie-Laetitia, artiste plasticienne | Œuvres originales et dessins artistiques</title>
-    <meta name="description" content="Découvrez l’univers artistique de Marie-Laetitia sur LaetyDraw : œuvres originales, dessins artistiques contemporains, exploration du corps, des émotions, du trait et de la couleur.">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Marie-Laetitia">
-    <meta name="theme-color" content="#f4f4f4">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="style.css?version=1.4.2">
-    <link rel="preload" href="collections.html" as="document">
+  <title>Vaward | DJ pour soirées, mariages, afterworks et événements privés</title>
+  <meta name="description" content="Vaward, DJ pour mariages, soirées privées, afterworks, anniversaires et événements professionnels. Ambiance sur mesure, réservation simple et univers premium." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Vaward" />
+  <meta name="theme-color" content="#0b0b12" />
 
-    <link rel="canonical" href="https://laetydraw.github.io/Siteweb/index.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://tonpseudo.github.io/Vaward/index.html" />
+  <link rel="stylesheet" href="style.css?version=1.0.0" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:site_name" content="LaetyDraw">
-    <meta property="og:title" content="LaetyDraw | Marie-Laetitia, artiste plasticienne">
-    <meta property="og:description" content="Découvrez les œuvres originales et l’univers artistique de Marie-Laetitia sur LaetyDraw.">
-    <meta property="og:url" content="https://laety-draw.com/">
-    <meta property="og:image" content="https://laety-draw.com/images/utile/signature.jpg">
+  <meta property="og:title" content="Vaward | DJ Events" />
+  <meta property="og:description" content="DJ pour soirées, mariages, afterworks et événements privés." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tonpseudo.github.io/Vaward/index.html" />
+  <meta property="og:image" content="https://tonpseudo.github.io/Vaward/images/og-cover.jpg" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="LaetyDraw | Marie-Laetitia, artiste plasticienne">
-    <meta name="twitter:description" content="Œuvres originales et univers artistique de Marie-Laetitia.">
-    <meta name="twitter:image" content="https://laety-draw.com/images/utile/signature.jpg">
-
-    <style>
-        .seo-hidden-title {
-            position: absolute;
-            left: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-    </style>
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">VAWARD</a>
 
-<body class="home-page transition-site">
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <main>
-        <section id="accueil" class="hero">
-            <h1 class="seo-hidden-title">
-                LaetyDraw - Marie-Laetitia, artiste plasticienne, œuvres originales et dessins artistiques
-            </h1>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="prestations.html">Prestations</a>
+        <a href="agenda.html">Agenda</a>
+        <a href="reservation.html">Réservation</a>
+        <a href="avis.html">Avis</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-            <div class="hero-content">
-                <p>
-                    Marie-Laetitia
-                    <span class="subtitle">Artiste plasticienne</span>
-                </p>
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <img src="images/hero-dj.jpg" alt="Vaward en performance DJ" class="hero-bg" />
 
-                <a href="collections.html" class="btn-explorer">Découvrir les œuvres</a>
-            </div>
-        </section>
-    </main>
+      <div class="container hero-content">
+        <p class="eyebrow">DJ • EVENTS • PREMIUM VIBES</p>
+        <h1>Faites de votre événement<br>un moment inoubliable</h1>
+        <p class="hero-text">
+          Mariage, soirée privée, afterwork, anniversaire, événement d’entreprise :
+          Vaward crée l’ambiance adaptée à votre public et à votre univers.
+        </p>
+        <div class="hero-buttons">
+          <a href="reservation.html" class="btn btn-primary">Réserver une date</a>
+          <a href="prestations.html" class="btn btn-secondary">Découvrir les prestations</a>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 LaetyDraw. Tous droits réservés.</p>
-        <p> Contact à : <a href="mailto:laety.draw@proton.me">laety.draw@proton.me</a></p>
-        <p>Version 1.4.2</p>
-    </footer>
+    <section class="section">
+      <div class="container grid-2 feature-intro">
+        <div>
+          <p class="section-tag">Pourquoi choisir Vaward</p>
+          <h2>Une ambiance pensée pour votre événement</h2>
+        </div>
+        <div>
+          <p>
+            Chaque soirée a son identité. L’objectif n’est pas seulement de passer de la musique,
+            mais de construire une énergie, de lire la salle et de créer de vrais souvenirs.
+          </p>
+        </div>
+      </div>
 
-    <script src="script.js?version=1.4.2"></script>
+      <div class="container cards-grid">
+        <article class="card glass">
+          <h3>Mariages</h3>
+          <p>Une ambiance élégante, festive et progressive pour accompagner chaque moment clé.</p>
+        </article>
+
+        <article class="card glass">
+          <h3>Afterworks</h3>
+          <p>Une sélection musicale moderne et maîtrisée pour un format chic, détendu et fédérateur.</p>
+        </article>
+
+        <article class="card glass">
+          <h3>Soirées privées</h3>
+          <p>Un set personnalisé selon le style voulu : house, open format, chill, festif, urbain.</p>
+        </article>
+
+        <article class="card glass">
+          <h3>Événements pros</h3>
+          <p>Un cadre sérieux, fiable et premium pour marquer les esprits sans faux pas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-tag">Prestations</p>
+          <h2>Des formats adaptés à tous les besoins</h2>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="card premium-card">
+            <span class="pill">Essentiel</span>
+            <h3>Set DJ</h3>
+            <p>Présence DJ pour votre événement avec préparation musicale en amont.</p>
+            <ul>
+              <li>Brief client</li>
+              <li>Ambiance adaptée</li>
+              <li>Set personnalisé</li>
+            </ul>
+          </article>
+
+          <article class="card premium-card featured">
+            <span class="pill">Le plus demandé</span>
+            <h3>DJ + accompagnement événement</h3>
+            <p>Formule idéale pour mariage, anniversaire, soirée privée ou afterwork.</p>
+            <ul>
+              <li>Préparation sur mesure</li>
+              <li>Coordination timing</li>
+              <li>Ambiance évolutive</li>
+            </ul>
+          </article>
+
+          <article class="card premium-card">
+            <span class="pill">Premium</span>
+            <h3>Expérience complète</h3>
+            <p>Prestation haut de gamme avec univers visuel, ambiance et présence renforcée.</p>
+            <ul>
+              <li>Accompagnement avancé</li>
+              <li>Échange détaillé</li>
+              <li>Expérience plus immersive</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="center">
+          <a href="prestations.html" class="btn btn-primary">Voir toutes les prestations</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="info-box">
+          <p class="section-tag">Agenda</p>
+          <h2>Consultez les prochaines disponibilités</h2>
+          <p>
+            Vérifiez rapidement les créneaux encore ouverts pour réserver votre date.
+          </p>
+          <a href="agenda.html" class="btn btn-secondary">Voir l’agenda</a>
+        </div>
+
+        <div class="info-box">
+          <p class="section-tag">Avis</p>
+          <h2>Découvrez l’expérience des clients</h2>
+          <p>
+            Des retours authentiques sur l’ambiance, l’organisation et la qualité des prestations.
+          </p>
+          <a href="avis.html" class="btn btn-secondary">Lire les avis</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container cta-box">
+        <p class="section-tag">Réservation</p>
+        <h2>Une date en tête ?</h2>
+        <p>
+          Demandez un devis ou vérifiez la disponibilité pour votre événement en quelques clics.
+        </p>
+        <a href="reservation.html" class="btn btn-primary">Faire une demande</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo footer-logo">VAWARD</div>
+        <p>DJ pour mariages, soirées privées, afterworks et événements professionnels.</p>
+      </div>
+
+      <div>
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="prestations.html">Prestations</a></li>
+          <li><a href="agenda.html">Agenda</a></li>
+          <li><a href="reservation.html">Réservation</a></li>
+          <li><a href="avis.html">Avis</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:vawardpro@gmail.com">vawardpro@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/vawardmusic/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Vaward — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?version=1.0.0" ></script>
 </body>
 </html>

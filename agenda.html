@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda | Vaward</title>
+  <meta name="description" content="Consultez les disponibilités de Vaward pour vos événements à venir." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://tonpseudo.github.io/Vaward/agenda.html" />
+  <link rel="stylesheet" href="style.css?version=1.0.0" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">VAWARD</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="index.html">Accueil</a>
+        <a href="prestations.html">Prestations</a>
+        <a href="agenda.html" class="active">Agenda</a>
+        <a href="reservation.html">Réservation</a>
+        <a href="avis.html">Avis</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-tag">Agenda</p>
+        <h1>Dates disponibles et déjà réservées</h1>
+        <p class="page-intro">
+          Premier affichage statique. Plus tard, on pourra le rendre plus intelligent.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="legend">
+          <span class="legend-item"><span class="dot available"></span> Disponible</span>
+          <span class="legend-item"><span class="dot limited"></span> Option / à confirmer</span>
+          <span class="legend-item"><span class="dot booked"></span> Réservé</span>
+        </div>
+
+        <div class="calendar-grid">
+          <article class="calendar-card">
+            <h3>Avril 2026</h3>
+            <ul class="date-list">
+              <li><strong>03 avril</strong> <span class="status available">Disponible</span></li>
+              <li><strong>04 avril</strong> <span class="status booked">Réservé</span></li>
+              <li><strong>10 avril</strong> <span class="status limited">Option</span></li>
+              <li><strong>18 avril</strong> <span class="status available">Disponible</span></li>
+            </ul>
+          </article>
+
+          <article class="calendar-card">
+            <h3>Mai 2026</h3>
+            <ul class="date-list">
+              <li><strong>02 mai</strong> <span class="status booked">Réservé</span></li>
+              <li><strong>09 mai</strong> <span class="status available">Disponible</span></li>
+              <li><strong>16 mai</strong> <span class="status available">Disponible</span></li>
+              <li><strong>23 mai</strong> <span class="status limited">Option</span></li>
+            </ul>
+          </article>
+
+          <article class="calendar-card">
+            <h3>Juin 2026</h3>
+            <ul class="date-list">
+              <li><strong>06 juin</strong> <span class="status available">Disponible</span></li>
+              <li><strong>13 juin</strong> <span class="status booked">Réservé</span></li>
+              <li><strong>20 juin</strong> <span class="status available">Disponible</span></li>
+              <li><strong>27 juin</strong> <span class="status limited">Option</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="center mt-40">
+          <a href="reservation.html" class="btn btn-primary">Demander une réservation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© 2026 Vaward — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?version=1.0.0"></script>
+</body>
+</html>
