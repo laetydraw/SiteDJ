@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://tonpseudo.github.io/Vaward/reservation.html" />
-  <link rel="stylesheet" href="style.css?version=1.0.0" />
+  <link rel="stylesheet" href="style.css?version=1.1.0" />
 </head>
 <body>
   <header class="site-header">
@@ -35,65 +35,81 @@
         <p class="section-tag">Réservation</p>
         <h1>Parle-nous de ton événement</h1>
         <p class="page-intro">
-          Ce formulaire est un premier jet visuel. Pour un vrai envoi sans logiciel mail,
-          on pourra le brancher ensuite à Formspree.
+          Remplis le formulaire ci-dessous pour envoyer directement ta demande de réservation à Vaward.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container form-layout">
-        <form class="booking-form" action="mailto:vawardpro@gmail.com" method="post" enctype="text/plain">
+        <form class="booking-form" id="reservation-form">
           <div class="form-group">
-            <label for="name">Nom</label>
-            <input type="text" id="name" name="Nom" placeholder="Votre nom" required />
+            <label for="name">Nom et prénom</label>
+            <input type="text" id="name" name="user_name" placeholder="DUPONT Antoine" required />
           </div>
 
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="Email" placeholder="votre@email.com" required />
+            <input type="email" id="email" name="user_email" placeholder="votre@email.com" required />
           </div>
 
           <div class="form-group">
             <label for="phone">Téléphone</label>
-            <input type="tel" id="phone" name="Téléphone" placeholder="+33 ..." />
+            <input type="tel" id="phone" name="user_phone" placeholder="+33 ..." />
           </div>
 
           <div class="form-group">
             <label for="eventType">Type d’événement</label>
-            <select id="eventType" name="Type d’événement" required>
+            <select id="eventType" name="event_type" required>
               <option value="">Choisir</option>
-              <option>Mariage</option>
-              <option>Afterwork</option>
-              <option>Anniversaire</option>
-              <option>Soirée privée</option>
-              <option>Événement d’entreprise</option>
-              <option>Autre</option>
+              <option value="Mariage">Mariage</option>
+              <option value="Afterwork">Afterwork</option>
+              <option value="Anniversaire">Anniversaire</option>
+              <option value="Soirée privée">Soirée privée</option>
+              <option value="Événement d’entreprise">Événement d’entreprise</option>
+              <option value="Autre">Autre</option>
             </select>
           </div>
 
           <div class="form-group">
             <label for="date">Date souhaitée</label>
-            <input type="date" id="date" name="Date souhaitée" />
+            <input type="date" id="date" name="event_date" />
           </div>
 
           <div class="form-group">
             <label for="location">Lieu</label>
-            <input type="text" id="location" name="Lieu" placeholder="Ville / lieu de réception" />
+            <input type="text" id="location" name="event_location" placeholder="Ville / lieu de réception" />
           </div>
 
           <div class="form-group">
             <label for="guests">Nombre d’invités</label>
-            <input type="number" id="guests" name="Nombre d’invités" placeholder="Ex. 120" min="1" />
+            <input type="number" id="guests" name="guest_count" placeholder="Ex. 120" min="1" />
           </div>
 
           <div class="form-group full-width">
             <label for="message">Détails</label>
-            <textarea id="message" name="Message" rows="6" placeholder="Décrivez l’ambiance souhaitée, le contexte, les horaires, le style musical, etc."></textarea>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Décrivez l’ambiance souhaitée, le contexte, les horaires, le style musical, etc."
+            ></textarea>
           </div>
 
+          <div class="honeypot-field" aria-hidden="true">
+  <label for="company">Entreprise</label>
+  <input
+    type="text"
+    id="company"
+    name="company"
+    tabindex="-1"
+    autocomplete="off"
+  />
+</div>
+
           <div class="form-group full-width">
-            <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Envoyer la demande</button>
+            <p id="form-status" class="form-status" aria-live="polite"></p>
           </div>
         </form>
 
@@ -123,6 +139,32 @@
     </div>
   </footer>
 
-  <script src="script.js?version=1.0.0?version=1.0.0"></script>
+  <div class="success-popup-overlay" id="success-popup" aria-hidden="true">
+  <div class="success-popup">
+    <button class="success-popup-close" id="success-popup-close" aria-label="Fermer la fenêtre">×</button>
+
+    <div class="success-popup-confetti" id="success-confetti"></div>
+
+    <div class="success-popup-icon-wrap">
+      <div class="success-popup-icon">🎵</div>
+      <div class="music-note note-1">♪</div>
+      <div class="music-note note-2">♫</div>
+      <div class="music-note note-3">♬</div>
+    </div>
+
+    <p class="success-popup-tag">Demande envoyée</p>
+    <h3>Votre demande a bien été transmise à Vaward</h3>
+    <p>
+      Merci pour votre message. Une réponse vous sera envoyée prochainement pour échanger sur votre événement.
+    </p>
+
+    <button class="btn btn-primary success-popup-btn" id="success-popup-btn">
+      Super
+    </button>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js?version=1.1.0"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://tonpseudo.github.io/Vaward/agenda.html" />
-  <link rel="stylesheet" href="style.css?version=1.0.0" />
+  <link rel="stylesheet" href="style.css?version=1.1.0" />
 </head>
 <body>
   <header class="site-header">
@@ -35,7 +35,7 @@
         <p class="section-tag">Agenda</p>
         <h1>Dates disponibles et déjà réservées</h1>
         <p class="page-intro">
-          Premier affichage statique. Plus tard, on pourra le rendre plus intelligent.
+          Consulte les disponibilités actuelles et réserve rapidement une date libre.
         </p>
       </div>
     </section>
@@ -44,7 +44,7 @@
       <div class="container">
         <div class="legend">
           <span class="legend-item"><span class="dot available"></span> Disponible</span>
-          <span class="legend-item"><span class="dot limited"></span> Option / à confirmer</span>
+          <span class="legend-item"><span class="dot limited"></span> Option</span>
           <span class="legend-item"><span class="dot booked"></span> Réservé</span>
         </div>
 
@@ -52,30 +52,98 @@
           <article class="calendar-card">
             <h3>Avril 2026</h3>
             <ul class="date-list">
-              <li><strong>03 avril</strong> <span class="status available">Disponible</span></li>
-              <li><strong>04 avril</strong> <span class="status booked">Réservé</span></li>
-              <li><strong>10 avril</strong> <span class="status limited">Option</span></li>
-              <li><strong>18 avril</strong> <span class="status available">Disponible</span></li>
+              <li class="date-row">
+                <div class="date-row-main">
+                  <strong>03 avril</strong>
+                  <span class="status available">Disponible</span>
+                </div>
+                <a class="agenda-book-btn" href="reservation.html?date=2026-04-03">Réserver</a>
+              </li>
+
+              <li class="date-row">
+                <div class="date-row-main">
+                  <strong>10 avril</strong>
+                  <span class="status limited">Option</span>
+                </div>
+              </li>
+
+              <li class="date-row">
+                <div class="date-row-main">
+                  <strong>18 avril</strong>
+                  <span class="status available">Disponible</span>
+                </div>
+                <a class="agenda-book-btn" href="reservation.html?date=2026-04-18">Réserver</a>
+              </li>
             </ul>
           </article>
 
           <article class="calendar-card">
             <h3>Mai 2026</h3>
             <ul class="date-list">
-              <li><strong>02 mai</strong> <span class="status booked">Réservé</span></li>
-              <li><strong>09 mai</strong> <span class="status available">Disponible</span></li>
-              <li><strong>16 mai</strong> <span class="status available">Disponible</span></li>
-              <li><strong>23 mai</strong> <span class="status limited">Option</span></li>
+              <li class="date-row">
+                <div class="date-row-main">
+                  <strong>02 mai</strong>
+                  <span class="status booked">Réservé</span>
+                </div>
+              </li>
+
+              <li class="date-row">
+                <div class="date-row-main">
+                  <strong>09 mai</strong>
+                  <span class="status available">Disponible</span>
+                </div>
+                <a class="agenda-book-btn" href="reservation.html?date=2026-05-09">Réserver</a>
+              </li>
+
+              <li class="date-row">
+                <div class="date-row-main">
+                  <strong>16 mai</strong>
+                  <span class="status available">Disponible</span>
+                </div>
+                <a class="agenda-book-btn" href="reservation.html?date=2026-05-16">Réserver</a>
+              </li>
+
+              <li class="date-row">
+                <div class="date-row-main">
+                  <strong>23 mai</strong>
+                  <span class="status limited">Option</span>
+                </div>
+              </li>
             </ul>
           </article>
 
           <article class="calendar-card">
             <h3>Juin 2026</h3>
             <ul class="date-list">
-              <li><strong>06 juin</strong> <span class="status available">Disponible</span></li>
-              <li><strong>13 juin</strong> <span class="status booked">Réservé</span></li>
-              <li><strong>20 juin</strong> <span class="status available">Disponible</span></li>
-              <li><strong>27 juin</strong> <span class="status limited">Option</span></li>
+              <li class="date-row">
+                <div class="date-row-main">
+                  <strong>06 juin</strong>
+                  <span class="status available">Disponible</span>
+                </div>
+                <a class="agenda-book-btn" href="reservation.html?date=2026-06-06">Réserver</a>
+              </li>
+
+              <li class="date-row">
+                <div class="date-row-main">
+                  <strong>13 juin</strong>
+                  <span class="status booked">Réservé</span>
+                </div>
+              </li>
+
+              <li class="date-row">
+                <div class="date-row-main">
+                  <strong>20 juin</strong>
+                  <span class="status available">Disponible</span>
+                </div>
+                <a class="agenda-book-btn" href="reservation.html?date=2026-06-20">Réserver</a>
+              </li>
+
+              <li class="date-row">
+                <div class="date-row-main">
+                  <strong>27 juin</strong>
+                  <span class="status limited">Option</span>
+                </div>
+              </li>
             </ul>
           </article>
         </div>
@@ -93,6 +161,6 @@
     </div>
   </footer>
 
-  <script src="script.js?version=1.0.0"></script>
+  <script src="script.js?version=1.1.0"></script>
 </body>
 </html>
