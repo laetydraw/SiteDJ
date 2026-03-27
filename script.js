@@ -285,3 +285,99 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const trigger = document.getElementById("dj-feedback-trigger");
+    const modal = document.getElementById("dj-feedback-modal");
+    const form = document.getElementById("dj-feedback-form");
+    const toast = document.getElementById("dj-toast");
+
+    const nameInput = document.getElementById("dj-name");
+    const anonymousCheckbox = document.getElementById("dj-anonymous");
+    const messageInput = document.getElementById("dj-message");
+    const errorBox = document.getElementById("dj-error");
+
+    const WORKER_URL = "https://vawardsupport.augustin-britsch.workers.dev/";
+
+    if (!trigger || !modal || !form || !nameInput || !anonymousCheckbox || !messageInput) {
+        return;
+    }
+
+    function openModal() {
+        modal.classList.add("open");
+    }
+
+    function closeModal() {
+        modal.classList.remove("open");
+        if (errorBox) errorBox.textContent = "";
+    }
+
+    function updateAnonymousState() {
+        if (anonymousCheckbox.checked) {
+            nameInput.value = "";
+            nameInput.disabled = true;
+            nameInput.placeholder = "Anonyme";
+        } else {
+            nameInput.disabled = false;
+            nameInput.placeholder = "Ton prénom (optionnel)";
+        }
+    }
+
+    trigger.addEventListener("click", openModal);
+
+    document.querySelectorAll("[data-close-dj]").forEach((el) => {
+        el.addEventListener("click", closeModal);
+    });
+
+    anonymousCheckbox.addEventListener("change", updateAnonymousState);
+    updateAnonymousState();
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        if (errorBox) errorBox.textContent = "";
+
+        const reaction = document.querySelector('input[name="reaction"]:checked')?.value || "🔥";
+        const anonymous = anonymousCheckbox.checked;
+        const name = anonymous ? "" : nameInput.value.trim();
+        const message = messageInput.value.trim();
+
+        if (!message) {
+            if (errorBox) errorBox.textContent = "Merci d’écrire un petit message.";
+            return;
+        }
+
+        try {
+            const res = await fetch(WORKER_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    reaction,
+                    name,
+                    anonymous,
+                    message,
+                    page: window.location.href
+                })
+            });
+
+            const data = await res.json();
+
+            if (!res.ok || !data.success) {
+                throw new Error(data.error || "Erreur lors de l’envoi.");
+            }
+
+            form.reset();
+            updateAnonymousState();
+            closeModal();
+
+            toast.classList.add("show");
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3000);
+
+        } catch (error) {
+            console.error(error);
+            if (errorBox) errorBox.textContent = "Impossible d’envoyer le message pour le moment.";
+        }
+    });
+});

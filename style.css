@@ -985,3 +985,183 @@ textarea::placeholder {
   border: 1px solid #ef4444;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
 }
+
+.dj-feedback-trigger {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 2000;
+
+    background: linear-gradient(135deg, #ff0066, #ff7a00);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: 0 12px 35px rgba(255,0,100,0.4);
+    transition: all 0.25s ease;
+}
+
+.dj-feedback-trigger:hover {
+    transform: scale(1.08);
+    box-shadow: 0 18px 45px rgba(255,0,100,0.5);
+}
+@media (max-width: 768px) {
+    .dj-feedback-trigger {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+}
+
+.dj-anonymous {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.dj-anonymous input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #ff4d8d;
+    cursor: pointer;
+}
+
+.dj-anonymous span {
+    line-height: 1;
+}
+.dj-feedback-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+}
+
+.dj-feedback-modal.open {
+    display: block;
+}
+
+.dj-feedback-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+}
+
+.dj-feedback-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #111;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.dj-feedback-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.dj-reactions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 18px 0;
+}
+
+.dj-reaction {
+    position: relative;
+    cursor: pointer;
+}
+
+.dj-reaction input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dj-reaction span {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.05);
+    transition: all 0.25s ease;
+}
+
+/* hover */
+.dj-reaction:hover span {
+    transform: scale(1.1);
+}
+
+/* sélection active */
+.dj-reaction input:checked + span {
+    transform: scale(1.2);
+    background: linear-gradient(135deg, #ff0066, #ff7a00);
+    box-shadow: 0 0 20px rgba(255,0,100,0.5);
+}
+
+.dj-reaction input:checked + span {
+    animation: djPulse 0.4s ease;
+}
+
+@keyframes djPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.35); }
+    100% { transform: scale(1.2); }
+}
+
+#dj-name,
+#dj-message {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+#dj-submit {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #ff0066, #ff7a00);
+    border: none;
+    color: white;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.dj-toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.dj-toast.show {
+    display: block;
+}

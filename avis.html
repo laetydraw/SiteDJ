@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://tonpseudo.github.io/Vaward/avis.html" />
-  <link rel="stylesheet" href="style.css?version=1.1.0" />
+  <link rel="stylesheet" href="style.css?version=1.2.0" />
 </head>
 <body>
   <header class="site-header">
@@ -76,6 +76,78 @@
     </div>
   </footer>
 
-  <script src="script.js?version=1.1.0"></script>
+  <script src="script.js?version=1.2.0"></script>
+
+  <!-- ==================== FEEDBACK DJ ==================== -->
+<button id="dj-feedback-trigger" class="dj-feedback-trigger">
+    🕺 Me soutenir
+</button>
+
+<div id="dj-feedback-modal" class="dj-feedback-modal">
+    <div class="dj-feedback-backdrop" data-close-dj></div>
+
+    <div class="dj-feedback-panel">
+        <button class="dj-feedback-close" data-close-dj>×</button>
+
+        <h2>Ton avis sur l’ambiance ?</h2>
+        <p class="dj-subtitle">
+            Une vibe, un ressenti, un moment marquant… tout est bienvenu 🎧
+        </p>
+
+        <form id="dj-feedback-form">
+
+           <div class="dj-reactions">
+    <label class="dj-reaction">
+        <input type="radio" name="reaction" value="🔥" checked>
+        <span>🔥</span>
+    </label>
+
+    <label class="dj-reaction">
+        <input type="radio" name="reaction" value="🎧">
+        <span>🎧</span>
+    </label>
+
+    <label class="dj-reaction">
+        <input type="radio" name="reaction" value="💃">
+        <span>💃</span>
+    </label>
+
+    <label class="dj-reaction">
+        <input type="radio" name="reaction" value="🚀">
+        <span>🚀</span>
+    </label>
+
+    <label class="dj-reaction">
+        <input type="radio" name="reaction" value="👏">
+        <span>👏</span>
+    </label>
+</div>
+
+            <input type="text" id="dj-name" placeholder="Ton prénom (optionnel)">
+
+            <label class="dj-anonymous" for="dj-anonymous">
+    <input type="checkbox" id="dj-anonymous">
+    <span>Anonyme</span>
+</label>
+
+            <textarea id="dj-message" rows="4" maxlength="400" placeholder="🪩 Tu as kiffé ta soirée ? Une émotion ressentie ? ou une idée d’amélioration du site ?">
+</textarea>
+
+            <p id="dj-error" class="dj-error"></p>
+
+            <button type="submit" id="dj-submit">
+                Envoyer
+            </button>
+
+        </form>
+    </div>
+</div>
+
+<div id="dj-toast" class="dj-toast">
+    <div class="dj-toast-content">
+        🔥 Merci pour ton retour !
+    </div>
+</div>
+
 </body>
 </html>
