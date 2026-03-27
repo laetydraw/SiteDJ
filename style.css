@@ -979,3 +979,9 @@ textarea::placeholder {
     right: 10px;
   }
 }
+.booking-form input.invalid,
+.booking-form select.invalid,
+.booking-form textarea.invalid {
+  border: 1px solid #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}

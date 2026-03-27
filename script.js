@@ -46,6 +46,62 @@ function prefillReservationFormFromURL() {
   }
 }
 
+function isValidEmail(email) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
+function validateReservationForm(form) {
+  const fields = [
+    document.getElementById("name"),
+    document.getElementById("email"),
+    document.getElementById("phone"),
+    document.getElementById("eventType"),
+    document.getElementById("date"),
+    document.getElementById("location"),
+    document.getElementById("guests")
+  ];
+
+  fields.forEach((field) => field && field.classList.remove("invalid"));
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
+  const eventType = document.getElementById("eventType");
+  const date = document.getElementById("date");
+  const location = document.getElementById("location");
+  const guests = document.getElementById("guests");
+
+  const requiredFields = [name, email, phone, eventType, date, location, guests];
+
+  let firstInvalidField = null;
+
+  requiredFields.forEach((field) => {
+    if (field && !field.value.trim()) {
+      field.classList.add("invalid");
+      if (!firstInvalidField) firstInvalidField = field;
+    }
+  });
+
+  if (firstInvalidField) {
+    firstInvalidField.focus();
+    return "Merci de remplir tous les champs obligatoires.";
+  }
+
+  if (!isValidEmail(email.value.trim())) {
+    email.classList.add("invalid");
+    email.focus();
+    return "Merci de renseigner une adresse email valide.";
+  }
+
+  if (Number(guests.value) < 1) {
+    guests.classList.add("invalid");
+    guests.focus();
+    return "Le nombre d’invités doit être supérieur à 0.";
+  }
+
+  return null;
+}
 function setupReservationForm() {
   const form = document.getElementById("reservation-form");
   const status = document.getElementById("form-status");
@@ -64,12 +120,28 @@ function setupReservationForm() {
 
     const honeypot = document.getElementById("company");
 
-    // Anti-spam 1: honeypot
+    if (status) {
+      status.textContent = "";
+      status.classList.remove("success", "error");
+    }
+
+    // Anti-spam 1
     if (honeypot && honeypot.value.trim() !== "") {
       return;
     }
 
-    // Anti-spam 2: envoi trop rapide = probable bot
+    // Validation des champs
+    const validationError = validateReservationForm(form);
+    if (validationError) {
+      if (status) {
+        status.textContent = validationError;
+        status.classList.remove("success");
+        status.classList.add("error");
+      }
+      return;
+    }
+
+    // Anti-spam 2
     const secondsOnPage = (Date.now() - formLoadedAt) / 1000;
     if (secondsOnPage < 3) {
       if (status) {
@@ -85,22 +157,15 @@ function setupReservationForm() {
       submitBtn.textContent = "Envoi...";
     }
 
-    if (status) {
-      status.textContent = "";
-      status.classList.remove("success", "error");
-    }
-
     try {
-      // 1) Mail envoyé à Vaward
       await emailjs.sendForm(
-        "service_cbfrral",
+        "service_cbfrra1",
         "template_tufodzk",
         form
       );
 
-      // 2) Mail de confirmation envoyé au client
       await emailjs.sendForm(
-        "service_cbfrral",
+        "service_cbfrra1",
         "template_rerr0b7",
         form
       );
