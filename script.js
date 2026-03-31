@@ -159,13 +159,13 @@ function setupReservationForm() {
 
     try {
       await emailjs.sendForm(
-        "service_cbfrra1",
+        "service_c9szodb",
         "template_tufodzk",
         form
       );
 
       await emailjs.sendForm(
-        "service_cbfrra1",
+        "service_c9szodb",
         "template_rerr0b7",
         form
       );
